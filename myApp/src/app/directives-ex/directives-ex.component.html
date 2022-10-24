@@ -1,0 +1,87 @@
+<p>directives-ex works!</p>
+
+<ul *ngFor="let empObj of people">
+    <li *ngIf="empObj.age<20; else greaterAge">
+    {{empObj.name}} {{empObj.age}}
+</li>
+</ul>
+<ng-template #greaterAge>
+    <!-- {{empObj.name}} {{empObj.age}} -->
+    <p>No data</p>
+</ng-template>
+
+{{people | json}}
+
+<h1>ngFor Table</h1>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employee1;
+        let i= index;
+        first as isFirst;
+        last as isLast;
+        even as isEven;
+        odd as isOdd;
+        count as totalCount;">
+
+        <td>Index:{{i}}</td>
+        <td>SL No: {{i+1}}</td>
+        <td>Total Count: {{i+1}} of {{totalCount}}</td>
+        <td [attr.colspan]="columnSpan">{{e.name}}</td>
+        <td [attr.colspan]="columnSpan">{{e.age}}</td>
+        <td [attr.colspan]="columnSpan">{{e.salary}}</td>
+        <td>Is First: {{isFirst}}
+            Is Last: {{isLast}}
+            Is Even: {{isEven}}
+            
+        </td>
+
+        </tr>
+    </tbody>
+</table>
+    <!-- ============= div ng-template ng-container =============== -->
+
+    <p>div ng-template ng-container</p>
+    <div *ngFor="let empObj of employee1">
+        <div *ngIf="empObj.age<25">
+            {{empObj.name}}: {{empObj.age}}
+        </div>
+    </div>
+--------------------------------
+<div *ngFor="let empObj1 of employee1">
+<div *ngIf="empObj1.age<20 ;else emp">
+    {{empObj1.name}}: {{empObj1.age}}
+</div>
+</div>
+<ng-template #emp>
+    <p>No Data Avail</p>>
+</ng-template>
+
+
+==================================
+<ng-container *ngFor="let empObj of employee1">
+    <div *ngIf="empObj.age<25">
+    {{empObj.name}}: {{empObj.age}}
+    </div>
+</ng-container>
+---------------------------------------
+<ul *ngFor="let empObj2 of employee1">
+    <li [ngClass]="{
+        'text-success': empObj2.name ==='Ankit',
+        'text-primary': empObj2.name ==='Bhanu',
+        'text-danger': empObj2.age === 25
+
+    }">
+    {{empObj2.name}}: {{empObj2.age}}
+
+    </li>
+</ul>

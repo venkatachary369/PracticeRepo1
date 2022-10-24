@@ -1,0 +1,58 @@
+<p>pipes-ex works!</p>
+<p>{{day}}</p>
+<p>{{day | date}}</p>
+<p>{{day | date:'dd/MM/yyyy'}}</p>
+
+<p>{{a | currency: 'USD':true}}</p>
+<p>{{a | currency:'INR':true:'4.2-4'}}</p>
+
+<p>pii {{pi | number: '.5-5'}}</p>
+<p>pi {{pi | number: '2.10-10'}}</p>
+
+<div *ngFor="let row of rows | keyvalue">
+    {{row | json}}
+    {{row.key}}: {{row.value}}
+    
+</div>
+<hr>
+<!-- <input [(ngModel)]="day | date:'yyyy'"> -->
+<input [ngModel] = "(day | date:'yyyy')" (ngModelChange) = "day = $event" type="text">
+<hr>
+<input [(ngModel)]="value">{{value | i18nPlural:map}}
+<hr><hr>
+<h1>===================Pure and Impure pipes=============></h1>
+
+<div>
+    <input type="number" [(ngModel)] = "newDigit">
+</div>&nbsp;
+<button (click)="addNewDigit()" color ="primary">Add New Element</button>
+
+<div>
+    <h3>Original List</h3>
+    <div>
+        <span *ngFor="let digit of originalList">
+            <b>{{digit+" "}}</b>
+        </span>
+    </div>
+</div>
+
+<div>
+    <h3>Impure Pipes</h3>
+    <p>Sorted On EveryChange</p>
+    <div>
+        <span *ngFor="let digit of impureSortableDigits | impureSortEx">
+            <b>{{digit+" "}}</b>
+
+        </span>
+    </div>
+</div>
+
+<div>
+    <h3>Pure Pipes</h3>
+    <p>Change detection once</p>
+    <div>
+        <span *ngFor="let digit of pureSortableDigits | pureSortEx">
+            <b>{{digit+" "}}</b>
+        </span>
+    </div>
+</div>

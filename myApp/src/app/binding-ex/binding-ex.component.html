@@ -1,0 +1,39 @@
+<p>binding-ex works!</p>
+
+<p>{{firstName}}</p>
+<table><thead>
+    <tr><th [attr.colspan]="columnSpan">
+        {{pageHeader}}
+    </th></tr>
+</thead>
+    <tbody>
+        <tr>
+            <td>First Name</td>
+            <td>{{firstName}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{lastName}}</td>
+        </tr>
+        <tr>
+            <td>Emp Dept</td>
+            <td>{{empDept}}</td>
+        </tr>
+    </tbody>
+
+</table>
+<!-- ========================================================================== -->
+
+<p [style.color]="'red'">Good Morning</p>
+<p [ngStyle]="styCls">Good Afternoon</p>
+<!-- <p [ngStyle]="{color:"red",}"></p> -->
+<!-- <img [attr.src]='source'> -->
+<p [ngStyle]="styCls">
+Millie Bobby Brown
+</p>
+
+<!-- ============= custom attr dir ================ -->
+<h2 appChangeColor>Custom Change Color</h2>
+
+
+<!-- <img src="C://Users//DELL//Downloads//1661241318238.jpg"> -->

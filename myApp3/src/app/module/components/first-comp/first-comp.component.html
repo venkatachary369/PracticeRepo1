@@ -1,0 +1,8 @@
+<p>first-comp works!</p>
+
+<input type="checkbox" class="form-control" name="selectAll" (change)="setCheckBox($event.target)"> Select ALl
+       <ng-container *ngFor="let checkedData  of checkBoxData;let i=index">
+         <label >{{i+1}} -- {{checkedData?'checked':'UnChecked'}}</label>  
+          </ng-container>
+<app-second-comp></app-second-comp>
+

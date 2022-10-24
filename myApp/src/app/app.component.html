@@ -1,0 +1,29 @@
+<h1>{{name}}</h1>
+<p>Hello</p>
+<!-- <ul>
+    <li *ngFor="let vars of myVar">{{vars.users.id}}</li>
+</ul> -->
+
+<!-- <div>
+    <p *ngFor="let prop of objKeys(x)">{{prop}}:{{x[prop]}}</p>
+</div> -->
+{{myVar.users[1].id}}
+{{myVar.userTitle}}<br>
+{{myVar|json}}
+---------{{myVar.users[0].name | uppercase}}
+<ul *ngFor="let userObj of myVar.users; index as i">
+    <!-- <li>{{userObj[1].address}}</li> -->
+    {{i}}
+    <li>{{userObj.name|uppercase}}-----{{userObj.address}} </li>
+    <li>{{userObj.id}}</li>
+    {{userObj.city}}
+</ul>
+<!-- <app-binding-ex></app-binding-ex>
+
+<app-parent-ex></app-parent-ex>
+
+<app-directives-ex></app-directives-ex> -->
+
+<!-- <app-youtube-comp></app-youtube-comp> -->
+
+<app-pipes-ex></app-pipes-ex>

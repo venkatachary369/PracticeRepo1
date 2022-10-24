@@ -1,0 +1,7 @@
+<div>
+
+    <ng-container *ngFor="let checkedData  of checkedData.selectedItem; let i=index">
+        <input type="checkbox" class="form-control" name="selectAll"
+         [checked]="checkedData" (change)="setSharedData($event.target,i)"> Select ALl
+    </ng-container>
+</div>
